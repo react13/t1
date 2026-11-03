@@ -9,3 +9,5 @@ Updated 2026-11-03 01:50 UTC.
   Scout trig_0121DwGkqLijbhL83TQbSp7P | Quant trig_01D3GMXwP4vT74tBgwaxTxB5 | Builder trig_013eTYJ2XqL3y54cn4i3adRx
   Brief trig_01KC6W8VsZZCtUuEMRkAfk1k | Weekly trig_01PPRJnzaxje6KjiGQvgi2mh
   Old copies on session_01Cc726jzT2ydA2BrfkEebCm are disabled (not deleted).
+- Alpaca free plan: SIP data newer than 15 min is refused. Use feed=iex for latest/snapshots; SIP for history.
+- cnbc.com is blocked by network policy too (optional).
