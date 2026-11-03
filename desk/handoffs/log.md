@@ -7,3 +7,4 @@
 | 2026-11-03 03:05 | Quant | Builder | strategies/ranked.md (1 provisional: H6_bigdown_3d, probe size only); hypotheses_2026-11-03.md; graveyard/ x10 |
 | 2026-11-03 04:58 | Builder | Brief | bot/PHASES.md, bot/h6_bot.py (dry-run only; awaiting owner OK, question #2) |
 | 2026-11-03 06:24 | Scout | Quant | findings/2026-11-03_0624_ny-pre.md |
+| 2026-11-03 07:30 | Brief | Owner | briefs/2026-11-03.md (in-session + email) |
