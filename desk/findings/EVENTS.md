@@ -1,5 +1,5 @@
 # Tier-1 events, next 14 days (ET). VERIFIED only if from official agency / company page.
-Last updated: Scout 2026-11-03 06:24 ET.
+Last updated: Scout 2026-11-03 10:24 ET.
 | Date | Event | Status | Desk action |
 |---|---|---|---|
 | Tue Nov 3 | US midterm elections (results overnight) | High-confidence, secondary sources | No launches; probe-size max until Wed close |
