@@ -1,0 +1,9 @@
+# Dates (ET) when the bot must NOT open new positions. Scout keeps this in sync with desk/findings/EVENTS.md.
+# Rule 5: no launches within 24h before / on tier-1 events (FOMC, CPI, NFP, US elections).
+2026-11-02  # 24h before midterms
+2026-11-03  # US midterm elections
+2026-11-04  # results day, probe max until Wed close
+2026-11-05  # 24h before NFP (UNVERIFIED date)
+2026-11-06  # NFP Oct (UNVERIFIED date)
+2026-11-09  # 24h before CPI (UNVERIFIED date)
+2026-11-10  # CPI (UNVERIFIED date)
