@@ -10,3 +10,4 @@
 | 2026-11-03 07:30 | Brief | Owner | briefs/2026-11-03.md (in-session + email) |
 | 2026-11-03 10:24 | Scout | Quant | findings/2026-11-03_1024_ny-mid.md |
 | 2026-11-03 14:24 | Scout | Quant | findings/2026-11-03_1424_ny-close.md |
+| 2026-11-03 18:23 | Scout | Quant | findings/2026-11-03_1823_asia.md (incl. Palantir date correction) |
