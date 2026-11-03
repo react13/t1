@@ -1,8 +1,11 @@
-# Setup status (for any new session picking up the desk)
-- Alpaca hosts allowed: YES (paper-api / data.alpaca.markets reachable).
-- Keys: owner set ALPACA_API_KEY / ALPACA_SECRET_KEY as environment variables; not visible in session started before the change.
+# Setup status (for any session picking up the desk)
+Updated 2026-11-03 01:50 UTC.
+- Alpaca: WORKING. Paper account ACTIVE, $100k equity, read-only check only (no orders).
+- Keys: NOT in environment variables yet. This session keeps them in ~/.config/alpaca.env (chmod 600, outside the repo).
+  If that file is missing (container reset), mark Alpaca steps BLOCKED and ask the owner to fix the env vars.
+- Data: desk/tools/fetch_bars.py SYMBOL START -> desk/data/SYMBOL_1min.csv.gz (gitignored). SIP feed, split-adjusted, QQQ from 2016-01-04.
 - Still blocked (optional): yahoo, sec.gov, bls.gov, federalreserve.gov, fred, cboe -> events marked UNVERIFIED.
-- Scheduled tasks (bound to session_01Cc726jzT2ydA2BrfkEebCm; move them to the new session):
-  Scout trig_01DD16k6EYNzbuav1nnq5DQF | Quant trig_011d7VmD52mM77gZbC9KiZ2g | Builder trig_01BSZfayqAZBeXo7brHNaL7W
-  Brief trig_01A3E8oRoA21WVUEcGdpdYWN | Weekly trig_01N8111kr9761xYWsWZ6o2yk
-- Next: verify account read-only, pull QQQ 1-min bars 2016->today, run Quant playbook.
+- Scheduled tasks now bound to session_01Cc726iUbevPrqzt1G2RXAi:
+  Scout trig_0121DwGkqLijbhL83TQbSp7P | Quant trig_01D3GMXwP4vT74tBgwaxTxB5 | Builder trig_013eTYJ2XqL3y54cn4i3adRx
+  Brief trig_01KC6W8VsZZCtUuEMRkAfk1k | Weekly trig_01PPRJnzaxje6KjiGQvgi2mh
+  Old copies on session_01Cc726jzT2ydA2BrfkEebCm are disabled (not deleted).

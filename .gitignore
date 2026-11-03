@@ -1,2 +1,5 @@
 # Personal trader-skill data (config holds SEC name/email)
 trader/
+
+# Market data pulled from Alpaca (too large for git)
+desk/data/
