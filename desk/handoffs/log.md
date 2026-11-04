@@ -18,3 +18,4 @@
 | 2026-11-04 06:24 | Scout | Quant | findings/2026-11-04_0624_ny-pre.md |
 | 2026-11-04 07:30 | Brief | Owner | briefs/2026-11-04.md (in-session + email) |
 | 2026-11-04 10:24 | Scout | Quant | findings/2026-11-04_1024_ny-mid.md |
+| 2026-11-04 14:24 | Scout | Quant | findings/2026-11-04_1424_ny-close.md |
