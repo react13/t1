@@ -13,3 +13,4 @@
 | 2026-11-03 18:23 | Scout | Quant | findings/2026-11-03_1823_asia.md (incl. Palantir date correction) |
 | 2026-11-03 22:23 | Scout | Quant | findings/2026-11-03_2223_asia.md (election reaction) |
 | 2026-11-04 02:23 | Scout | Quant | findings/2026-11-04_0223_london.md |
+| 2026-11-04 03:10 | Quant | Builder | strategies/hypotheses_2026-11-04.md (10 new, 0 survivors); ranked.md H6 robustness update; graveyard x10 |

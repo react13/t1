@@ -22,3 +22,34 @@ Only one hypothesis reached 18/25, and only just. It is NOT statistically proven
 - Bootstrap worst-case drawdown (60.97% of notional) is far above the realised 9.42%: falling-knife risk is real.
 - 3-day holds go through overnight gaps and events; the backtest did not skip tier-1 events.
 - QQQ != MNQ: futures trade overnight; signal and fills will differ slightly.
+
+
+## Robustness update (Quant v2, 2026-11-04) — H6 parameter neighbourhood
+16 nearby settings (trigger x hold days), same engine and costs. Fixed rules, not a search: the live rule stays -2% / 3 days.
+| Trigger | Hold days | IS Sharpe | OOS Sharpe | OOS trades |
+|---|---|---|---|---|
+| -0.015 | 2 | 0.7 | 0.33 | 134 |
+| -0.015 | 3 | 0.87 | 0.54 | 115 |
+| -0.015 | 4 | 0.68 | 0.44 | 106 |
+| -0.015 | 5 | 0.56 | 0.23 | 98 |
+| -0.02 | 2 | 0.85 | 0.45 | 84 |
+| -0.02 | 3 | 0.46 | 0.85 | 75 |
+| -0.02 | 4 | 0.55 | 0.68 | 70 |
+| -0.02 | 5 | 0.9 | 0.21 | 62 |
+| -0.025 | 2 | 0.7 | -0.05 | 48 |
+| -0.025 | 3 | 0.32 | 0.25 | 43 |
+| -0.025 | 4 | 0.44 | 0.25 | 41 |
+| -0.025 | 5 | 0.65 | -0.0 | 37 |
+| -0.03 | 2 | 0.56 | -0.28 | 29 |
+| -0.03 | 3 | 0.2 | -0.09 | 27 |
+| -0.03 | 4 | 0.27 | 0.23 | 26 |
+| -0.03 | 5 | 0.48 | -0.08 | 24 |
+
+What this says:
+- The live cell (-2%, 3 days) has the BEST OOS Sharpe of all 16 (0.85). Its neighbours are typically 0.2-0.7 -> the 0.85 is partly luck of the pick.
+  Realistic OOS Sharpe to expect: ~0.4-0.5 (ESTIMATE, median of the -1.5% and -2% rows).
+- IS Sharpe is positive in all 16 cells; OOS is positive in all 8 cells with triggers of -1.5% or -2%, and fades at -2.5%/-3% (fewer trades, 24-48).
+  -> The 'buy after a down day' effect looks real but modest; deeper triggers do not add edge.
+- Deflated Sharpe with 61 cumulative trials: 0.287 (needs 0.95) -> still NOT significant.
+  (It rose vs v1's 0.085 because the 16 grid cells are highly correlated, which narrows the spread of trial Sharpes; it is not new evidence.)
+- Verdict unchanged: PROVISIONAL, paper probe size only. Monitor live paper results against an OOS Sharpe of ~0.45, not 0.85.
