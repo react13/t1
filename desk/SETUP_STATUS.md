@@ -1,7 +1,7 @@
 # Setup status (for any session picking up the desk)
 Updated 2026-11-03 01:50 UTC.
 - Alpaca: WORKING. Paper account ACTIVE, $100k equity, read-only check only (no orders).
-- Keys: NOT in environment variables yet. This session keeps them in ~/.config/alpaca.env (chmod 600, outside the repo).
+- Keys: ENV VARS WORKING since session restart ~2026-11-04 03:20 UTC (ALPACA_API_KEY/SECRET present, paper account auth OK). Fallback still: This session keeps them in ~/.config/alpaca.env (chmod 600, outside the repo).
   If that file is missing (container reset), mark Alpaca steps BLOCKED and ask the owner to fix the env vars.
 - Data: desk/tools/fetch_bars.py SYMBOL START -> desk/data/SYMBOL_1min.csv.gz (gitignored). SIP feed, split-adjusted, QQQ from 2016-01-04.
 - Still blocked (optional): yahoo, sec.gov, bls.gov, federalreserve.gov, fred, cboe -> events marked UNVERIFIED.
