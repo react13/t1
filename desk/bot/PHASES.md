@@ -47,3 +47,13 @@
    15:40 `close --paper`. Each run commits state.json and trades.csv.
 3. To check it: `python3 desk/bot/h6_bot.py status`. To stop it: set `"halted": "owner stop"` in desk/bot/state.json, or tell the desk "stop the bot".
 4. Earliest possible entry: the first H6 signal on a non-blackout day (after 2026-11-10 at the current blackout list).
+
+## Builder run 2 — 2026-11-04 04:53 ET
+- Ranked list unchanged (H6 only, still PROVISIONAL). No code change needed.
+- Keys now come from environment variables (fixed by owner); bot authenticates without the fallback file.
+- Dry-run checks: status OK (paper ACTIVE, $100k, no positions); today's signal check 11-02 681.13 -> 11-03 685.34 = +0.62% -> no signal;
+  10-19 replay still matches the backtest (2 shares OPG).
+- Monitoring benchmark updated from Quant v2: judge live paper results against an OOS Sharpe of ~0.45 (neighbourhood median), not 0.85.
+  With ~15 trades a year, no meaningful verdict before ~30 trades (ESTIMATE: about 2 years). Weekly review should track hit rate and average
+  trade against the backtest (OOS win 54.7%, avg +0.63% per trade) instead of P&L alone.
+- Still waiting on owner OK (questions.md #2). Nothing scheduled; nothing sent.
