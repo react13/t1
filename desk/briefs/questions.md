@@ -3,4 +3,4 @@
    query1.finance.yahoo.com, query2.finance.yahoo.com, www.sec.gov, www.bls.gov, www.federalreserve.gov, fred.stlouisfed.org, www.cboe.com
    and add ALPACA_API_KEY / ALPACA_SECRET_KEY (paper) as environment secrets. Until then Quant cannot backtest.
 2. (2026-11-03 Quant) Only H6 (buy after a -2% QQQ day, hold 3 days) reached 18/25, and it fails the deflated-Sharpe test (not statistically proven).
-   OK to paper-trade it at Probe size ($50 risk) while Quant keeps searching? Default if no answer: yes, paper only, Probe size.
+   OK to paper-trade it at Probe size ($50 risk) while Quant keeps searching? No answer = bot stays DRY-RUN (explicit owner OK required).
