@@ -28,3 +28,4 @@
 | 2026-11-05 07:30 | Brief | Owner | briefs/2026-11-05.md (in-session + email) |
 | 2026-11-05 10:23 | Scout | Quant | findings/2026-11-05_1023_ny-mid.md (QQQ -4.5% chip rout) |
 | 2026-11-05 14:23 | Scout | Quant | findings/2026-11-05_1423_ny-close.md (QQQ -5.7%) |
+| 2026-11-05 18:23 | Scout | Quant | findings/2026-11-05_1823_asia.md (QQQ -6.37%, H6 fired but blackout-skipped; track hypothetically) |
