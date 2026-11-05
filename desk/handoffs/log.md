@@ -26,3 +26,4 @@
 | 2026-11-05 04:58 | Builder | Brief | bot/i3_bot.py (dry-run), PHASES.md I3 section; awaiting owner OK (#2 H6, #3 I3) |
 | 2026-11-05 06:23 | Scout | Quant | findings/2026-11-05_0623_ny-pre.md |
 | 2026-11-05 07:30 | Brief | Owner | briefs/2026-11-05.md (in-session + email) |
+| 2026-11-05 10:23 | Scout | Quant | findings/2026-11-05_1023_ny-mid.md (QQQ -4.5% chip rout) |
