@@ -57,3 +57,22 @@
   With ~15 trades a year, no meaningful verdict before ~30 trades (ESTIMATE: about 2 years). Weekly review should track hit rate and average
   trade against the backtest (OOS win 54.7%, avg +0.63% per trade) instead of P&L alone.
 - Still waiting on owner OK (questions.md #2). Nothing scheduled; nothing sent.
+
+# I3 overnight-uptrend bot — phases (Builder run 3, 2026-11-05 04:55 ET)
+1. Orient: ranked #1 I3_overnight_uptrend (21/25, PROVISIONAL, DSR 0.32). Same risk rules as H6; Probe $50 in first 2 weeks; never above $100.
+2. Brainstorm: one decision a day at 15:45; exchange auctions both ways (MOC buy, MOO sell) to match backtest prices and keep costs at
+   auction level (cost sensitivity is this strategy's main risk).
+3. Architecture: shares h6_bot.py plumbing (calendar, kill switch, tiers, logging, PAPER-only URL). State in state_i3.json, log trades_i3.csv.
+   Filter = 15:45 price vs 200-day average of the last 199 full-session SIP daily closes + the 15:45 price.
+   Size = floor(risk / (price x 1.11%)), 1.11% = 5th-pct overnight loss with filter on. Probe $50 -> ~6 shares (~$4,100).
+4. Build: desk/bot/i3_bot.py (evening / morning / status). DRY RUN default.
+5. Review:
+   - Lookahead found and fixed BEFORE build: backtest used the close for the filter, but MOC orders must go in by ~15:50. Re-tested with the
+     15:45 price: OOS Sharpe 1.02 (vs 0.97), stress 0.69, same 900 nights -> deciding at 15:45 is fine.
+   - Parity: replayed 10-27, 10-30 (filter ON, 6 shares) and 2025-04-07 (OFF). Bot 200-day avg 678.37 vs backtest 678.32 on 10-30
+     (0.007% gap: bot uses official daily closes, backtest uses the 15:59 bar). Acceptable.
+   - Blackout: bot skips NEW overnight positions on blackout dates (stricter than backtest; costs a few nights a month).
+   - Worst backtest overnight gap -7.0% -> ~-$290 at 6 shares, inside the $350 daily limit but close to it.
+   - NOT DONE: fill reconciliation and loss-streak update for I3 (needs real fills) -> must be added in the first paper week before
+     the 3-losses kill switch can work for I3. Stated plainly so nobody assumes it works.
+6. Ship: not scheduled. Needs owner OK (questions.md #3). If approved: weekdays 15:42 `evening --paper`, 09:20 `morning --paper`.

@@ -23,3 +23,4 @@
 | 2026-11-04 22:23 | Scout | Quant | findings/2026-11-04_2223_asia.md |
 | 2026-11-05 02:23 | Scout | Quant | findings/2026-11-05_0223_london.md |
 | 2026-11-05 03:15 | Quant | Builder | ranked.md: NEW #1 I3_overnight_uptrend (21/25, provisional); H6 #2; hypotheses_2026-11-05.md; graveyard x9 |
+| 2026-11-05 04:58 | Builder | Brief | bot/i3_bot.py (dry-run), PHASES.md I3 section; awaiting owner OK (#2 H6, #3 I3) |
