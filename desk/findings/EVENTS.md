@@ -1,5 +1,5 @@
 # Tier-1 events, next 14 days (ET). VERIFIED only if from official agency / company page.
-Last updated: Scout 2026-11-05 10:23 ET. (Palantir row removed: it reported Mon Nov 2, earlier shifts had the date wrong.)
+Last updated: Scout 2026-11-05 14:23 ET. (Palantir row removed: it reported Mon Nov 2, earlier shifts had the date wrong.)
 | Date | Event | Status | Desk action |
 |---|---|---|---|
 | Tue Nov 3 | US midterm elections: Dems take House + Senate | Media calls (not certified) | No launches; probe-size max until Wed close |

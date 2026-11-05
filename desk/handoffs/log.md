@@ -27,3 +27,4 @@
 | 2026-11-05 06:23 | Scout | Quant | findings/2026-11-05_0623_ny-pre.md |
 | 2026-11-05 07:30 | Brief | Owner | briefs/2026-11-05.md (in-session + email) |
 | 2026-11-05 10:23 | Scout | Quant | findings/2026-11-05_1023_ny-mid.md (QQQ -4.5% chip rout) |
+| 2026-11-05 14:23 | Scout | Quant | findings/2026-11-05_1423_ny-close.md (QQQ -5.7%) |
