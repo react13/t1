@@ -21,3 +21,4 @@
 | 2026-11-04 14:24 | Scout | Quant | findings/2026-11-04_1424_ny-close.md |
 | 2026-11-04 18:23 | Scout | Quant | findings/2026-11-04_1823_asia.md |
 | 2026-11-04 22:23 | Scout | Quant | findings/2026-11-04_2223_asia.md |
+| 2026-11-05 02:23 | Scout | Quant | findings/2026-11-05_0223_london.md |
