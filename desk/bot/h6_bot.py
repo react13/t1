@@ -176,6 +176,8 @@ def guard():
         last, _ = latest_trade(); ref = p.get("fill") or p["ref"]
         upl = (last - ref) * p["qty"]                          # open P&L since entry (conservative vs intraday-only); realized = desk_day(today)["realized"]
         if realized + upl <= -DAILY_LOSS_LIMIT: why = why or f"daily loss limit: desk realized {realized:.0f} + H6 open {upl:.0f}"
+    if why and why.startswith("stale") and not p:
+        return log(f"guard: {why} but H6 holds nothing -> no halt (next morning run re-checks)")
     if why and why.startswith(("stale", "daily")):
         log(f"KILL SWITCH: {why} -> flatten H6's own shares and halt")
         if p: send({"symbol": SYMBOL, "qty": str(p["qty"]), "side": "sell", "type": "market", "time_in_force": "day", "client_order_id": f"h6-kill-{today}"})
