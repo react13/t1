@@ -95,13 +95,29 @@ def append_log(row):
         if new: f.write("date,action,qty,ref_price,fill_price,slip_bp,pnl,note\n")
         f.write(",".join(str(x) for x in row) + "\n")
 
+PAPER_START = "2026-11-11"   # owner approval (desk/briefs/decisions.md 2026-11-06): paper orders from Wed Nov 11, not before
+
 def send(order):
+    if LIVE and str(now().date()) < PAPER_START:
+        log(f"BLOCKED (before approved paper start {PAPER_START}) would send " + json.dumps(order)); return {"id": "blocked", "status": "blocked"}
     log(("SEND " if LIVE else "DRY-RUN would send ") + json.dumps(order))
     return api(TRADE_URL, "/v2/orders", "POST", order) if LIVE else {"id": "dry-run", "status": "dry"}
 
+STATE_FILES = ["state.json", "state_i3.json"]   # every bot on the desk; the $350 limit is DESK-WIDE
+
+def desk_day(today):
+    """Realized P&L and loss count for today summed over ALL bots' state files (both trade QQQ in one account)."""
+    tot = {"realized": 0.0, "losses": 0}
+    for f in STATE_FILES:
+        fp = os.path.join(HERE, f)
+        if os.path.exists(fp):
+            d = json.load(open(fp)).get("day", {}).get(today, {})
+            tot["realized"] += d.get("realized", 0.0); tot["losses"] += d.get("losses", 0)
+    return tot
+
 def risk_budget(s, today):
-    """risk = min(tier, $350 - today's realized loss); after 2 losses today max tier C; never above flat $100 until tiers are proven."""
-    d = s["day"].get(today, {"realized": 0.0, "losses": 0})
+    """risk = min(tier, $350 - today's DESK-WIDE realized loss); after 2 desk losses today max tier C; never above flat $100 until tiers are proven."""
+    d = desk_day(today)
     tier = TIERS[TIER]
     if d["losses"] >= 2: tier = min(tier, TIERS["C"])
     tier = min(tier, TIERS["C"])
@@ -154,16 +170,16 @@ def morning():
 def guard():
     s = load_state(); today = str(now().date())
     why = kill_switch(s)
-    pos = None
-    if LIVE:
-        try: pos = api(TRADE_URL, f"/v2/positions/{SYMBOL}")
-        except urllib.error.HTTPError: pos = None
-    if pos:
-        upl = float(pos["unrealized_intraday_pl"]); realized = s["day"].get(today, {}).get("realized", 0.0)
-        if realized + upl <= -DAILY_LOSS_LIMIT: why = why or f"daily loss limit: realized {realized:.0f} + open {upl:.0f}"
+    # Own position only: the account's QQQ position can include other bots' shares (Alpaca nets per symbol).
+    p = s["position"] if (s["position"] and not s["position"].get("dry")) else None
+    if p:
+        last, _ = latest_trade(); ref = p.get("fill") or p["ref"]
+        upl = (last - ref) * p["qty"]                          # open P&L since entry (conservative vs intraday-only); realized = desk_day(today)["realized"]
+        if realized + upl <= -DAILY_LOSS_LIMIT: why = why or f"daily loss limit: desk realized {realized:.0f} + H6 open {upl:.0f}"
     if why and why.startswith(("stale", "daily")):
-        log(f"KILL SWITCH: {why} -> flatten and halt")
-        if pos: send({"symbol": SYMBOL, "qty": pos["qty"], "side": "sell", "type": "market", "time_in_force": "day", "client_order_id": f"h6-kill-{today}"})
+        log(f"KILL SWITCH: {why} -> flatten H6's own shares and halt")
+        if p: send({"symbol": SYMBOL, "qty": str(p["qty"]), "side": "sell", "type": "market", "time_in_force": "day", "client_order_id": f"h6-kill-{today}"})
+        if p: s["position"] = None; s["pending_reconcile"] = {**p, "exit_day": today, "kill": True}
         s["halted"] = f"{today} {why}"; save_state(s)
     else:
         log(f"guard ok{' ('+why+')' if why else ''}")
@@ -184,7 +200,8 @@ def reconcile():
     s = load_state(); p = s.get("pending_reconcile")
     if not p or not LIVE: return
     buy = api(TRADE_URL, f"/v2/orders:by_client_order_id", q={"client_order_id": f"h6-buy-{p['entry_day']}"})
-    sell = api(TRADE_URL, f"/v2/orders:by_client_order_id", q={"client_order_id": f"h6-sell-{p['exit_day']}"})
+    sid = f"h6-kill-{p['exit_day']}" if p.get("kill") else f"h6-sell-{p['exit_day']}"
+    sell = api(TRADE_URL, f"/v2/orders:by_client_order_id", q={"client_order_id": sid})
     bf, sf = float(buy["filled_avg_price"]), float(sell["filled_avg_price"])
     pnl = (sf - bf) * p["qty"]
     mo, mc = bar_price(p["entry_day"], "09:30", "o"), bar_price(p["exit_day"], "15:59", "c")   # backtest's model prices

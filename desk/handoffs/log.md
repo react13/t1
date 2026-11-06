@@ -32,3 +32,4 @@
 | 2026-11-05 22:23 | Scout | Quant | findings/2026-11-05_2223_asia.md |
 | 2026-11-06 02:23 | Scout | Quant | findings/2026-11-06_0223_london.md |
 | 2026-11-06 03:20 | Quant | Builder | ranked.md v4 risk update; hypotheses_2026-11-06.md; question #4 (A/B proposals). Approved rules unchanged |
+| 2026-11-06 05:05 | Builder | Brief | bots fixed + tested (11/11), Review PASS; scheduling paper runs from Nov 11 |

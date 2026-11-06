@@ -41,10 +41,12 @@ def price_at_1545(d):
     p, _ = base.latest_trade(); return p
 
 def evening():
+    reconcile()
     s = base.load_state(); today = str(base.now().date())
     days = full_sessions()
     if not days or days[-1] != today: return log(f"{today} not a full session -> no trade")
     if s["position"]: return log(f"already holding {s['position']} (morning exit missed?) -> no new entry")
+    if s.get("pending_reconcile"): return log("last trade not reconciled -> no new entry")
     if blackout(today): return log("blackout date -> no new overnight position (rule 5, conservative)")
     why = kill_switch(s, check_data=not base.ASOF)
     if why: return log(f"kill switch: {why}")
@@ -68,8 +70,35 @@ def morning():
     if p["dry"] and base.LIVE: return log("state holds a DRY-RUN position; clear state_i3.json before paper trading")
     send({"symbol": SYMBOL, "qty": str(p["qty"]), "side": "sell", "type": "market", "time_in_force": "opg", "client_order_id": f"i3-sell-{today}"})
     append_log([today, "SELL-OPG", p["qty"], "", "", "", "", f"entered {p['entry_day']}"])
+    if base.LIVE: s["pending_reconcile"] = {**p, "exit_day": today}
     s["position"] = None; base.save_state(s)
-    # fill reconciliation + loss streak: TODO in first paper week (needs real fills) — see PHASES.md
+
+def halt(s, why):
+    s["halted"] = why; base.save_state(s); log(f"HALT: {why}")
+
+def reconcile():
+    """Run at the start of every evening: read last night's fills, book P&L on the exit day, update the loss streak,
+    check slippage vs the backtest's model prices (15:59 close for the MOC buy, 09:30 open for the MOO sell)."""
+    s = base.load_state(); p = s.get("pending_reconcile")
+    if not p: return
+    try:
+        buy = api(TRADE_URL, "/v2/orders:by_client_order_id", q={"client_order_id": f"i3-buy-{p['entry_day']}"})
+        sell = api(TRADE_URL, "/v2/orders:by_client_order_id", q={"client_order_id": f"i3-sell-{p['exit_day']}"})
+    except Exception as e:
+        return halt(s, f"reconcile: cannot read orders ({e}) -> retry next run")
+    if buy.get("status") != "filled" or sell.get("status") != "filled":
+        return halt(s, f"reconcile: buy {buy.get('status')} / sell {sell.get('status')} (not both filled) -> owner check")
+    bf, sf, q = float(buy["filled_avg_price"]), float(sell["filled_avg_price"]), int(float(sell["filled_qty"]))
+    pnl = (sf - bf) * q
+    mb, ms = base.bar_price(p["entry_day"], "15:59", "c"), base.bar_price(p["exit_day"], "09:30", "o")
+    slip = max(abs(bf / mb - 1), abs(sf / ms - 1)) * 1e4 if mb and ms else 0.0
+    d = s["day"].setdefault(p["exit_day"], {"realized": 0.0, "losses": 0}); d["realized"] += pnl
+    if pnl < 0: d["losses"] += 1; s["losses_in_row"] += 1
+    else: s["losses_in_row"] = 0
+    if slip > 3 * base.MODEL_SLIP_BP: s["halted"] = f"{p['exit_day']} slippage {slip:.1f}bp > 3x model"
+    append_log([p["exit_day"], "RECONCILE", q, f"{mb}->{ms}", f"{bf}->{sf}", f"{slip:.1f}", f"{pnl:.2f}", f"streak {s['losses_in_row']}"])
+    s.pop("pending_reconcile"); base.save_state(s)
+    log(f"reconciled {p['entry_day']}->{p['exit_day']}: {q} sh {bf}->{sf} pnl ${pnl:.2f} slip {slip:.1f}bp streak {s['losses_in_row']}")
 
 if __name__ == "__main__":
     cmd = (sys.argv[1:] or ["status"])[0]

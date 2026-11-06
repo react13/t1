@@ -76,3 +76,20 @@
    - NOT DONE: fill reconciliation and loss-streak update for I3 (needs real fills) -> must be added in the first paper week before
      the 3-losses kill switch can work for I3. Stated plainly so nobody assumes it works.
 6. Ship: not scheduled. Needs owner OK (questions.md #3). If approved: weekdays 15:42 `evening --paper`, 09:20 `morning --paper`.
+
+## Builder run 4 — 2026-11-06 04:55 ET — Review for the APPROVED paper probe (decisions.md 2026-11-06)
+Bugs found and fixed:
+- SHARED-POSITION BUG: H6 and I3 both trade QQQ in one Alpaca account, and Alpaca nets positions per symbol. H6's kill switch sold the
+  account's WHOLE QQQ position and its daily-loss check used the account's P&L (which could include I3's shares). Now H6 uses only its own
+  shares and its own entry price; the flatten order sells only H6's quantity.
+- DAILY LIMIT WAS PER BOT: the $350 limit and "max tier C after 2 losses" now read BOTH bots' state files (desk-wide), via desk_day().
+- I3 MISSING PIECES (owner's precondition): fill reconciliation + loss streak + slippage check added (reconcile() runs at the start of
+  every evening). Unfilled or unreadable orders HALT the bot for an owner check instead of guessing. Kill-switch fills on H6 reconcile too.
+- A call to reconcile() was briefly left pointing at nothing (an edit didn't apply); the offline tests caught it before commit.
+- START-DATE GUARD: send() refuses any paper order before 2026-11-11, whatever the schedule does.
+Tests: desk/bot/tests/test_bots.py (fake Alpaca, no network, no orders): 11/11 pass — win booking, streak reset, 3-loss kill switch,
+  slippage halt, unfilled-order halt, desk-wide budget ($350 - $330 loss -> $20), start-date block, no orders sent.
+Replays unchanged: H6 10-19 (2 sh OPG), I3 10-30 (6 sh CLS).
+Known limits (accepted for a Probe): the daily-loss guard runs hourly, not every 5 min (scheduled tasks are hourly at most);
+  the stale-data halt is permanent until the owner clears it; proposals A/B (questions.md #4) NOT applied.
+Review verdict: PASS for paper Probe from 2026-11-11.
