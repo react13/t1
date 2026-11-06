@@ -34,3 +34,4 @@
 | 2026-11-06 03:20 | Quant | Builder | ranked.md v4 risk update; hypotheses_2026-11-06.md; question #4 (A/B proposals). Approved rules unchanged |
 | 2026-11-06 05:05 | Builder | Brief | bots fixed + tested (11/11), Review PASS; scheduling paper runs from Nov 11 |
 | 2026-11-06 06:23 | Scout | Quant | findings/2026-11-06_0623_ny-pre.md |
+| 2026-11-06 07:30 | Brief | Owner | briefs/2026-11-06.md (confirms approval; asks #4) |
