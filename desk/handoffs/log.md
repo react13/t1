@@ -30,3 +30,4 @@
 | 2026-11-05 14:23 | Scout | Quant | findings/2026-11-05_1423_ny-close.md (QQQ -5.7%) |
 | 2026-11-05 18:23 | Scout | Quant | findings/2026-11-05_1823_asia.md (QQQ -6.37%, H6 fired but blackout-skipped; track hypothetically) |
 | 2026-11-05 22:23 | Scout | Quant | findings/2026-11-05_2223_asia.md |
+| 2026-11-06 02:23 | Scout | Quant | findings/2026-11-06_0223_london.md |
