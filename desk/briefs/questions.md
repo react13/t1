@@ -6,3 +6,7 @@
    OK to paper-trade it at Probe size ($50 risk) while Quant keeps searching? No answer = bot stays DRY-RUN (explicit owner OK required).
 3. RESOLVED 2026-11-06: owner approved paper Probe from Nov 11 (see decisions.md). Original: (2026-11-05 Quant) New provisional #1: I3 (hold QQQ overnight only when above its 200-day average), 21/25 but not statistically proven
    and very cost-sensitive. Should Builder add it to the dry-run bot alongside H6? Nothing trades without your explicit OK.
+4. (2026-11-06 Quant) Two optional safety changes to the APPROVED paper strategies (details: desk/strategies/ranked.md, Quant v4):
+   A) H6 skips signals after drops worse than -5% (no edge after extreme days; found after seeing data, so overfitting risk).
+   B) Within the $50 Probe cap, size DOWN when volatility is high (never up). Better Sharpe and lower drawdown OOS for both.
+   Reply "A", "B", "both" or "neither". Default without a reply: approved rules stay exactly as they are.

@@ -89,3 +89,20 @@ What this says:
 - Deflated Sharpe with 61 cumulative trials: 0.287 (needs 0.95) -> still NOT significant.
   (It rose vs v1's 0.085 because the 16 grid cells are highly correlated, which narrows the spread of trial Sharpes; it is not new evidence.)
 - Verdict unchanged: PROVISIONAL, paper probe size only. Monitor live paper results against an OOS Sharpe of ~0.45, not 0.85.
+
+
+## Quant v4 update (2026-11-06) — risk checks on the APPROVED strategies (paper, Probe $50, from Nov 11)
+Nothing below changes the approved rules. Two proposals need the owner's OK (questions.md #4).
+
+1. H6 has NO edge after extreme drops. After <= -4% days (23 trades since 2016): IS Sharpe -0.03, OOS -0.30; worst trades in March 2020
+   (-11.9%, -6.9%) and Apr 2025 (-5.0%). Excluding drops beyond -5% (R1): OOS Sharpe 0.98 (vs 0.84), stress 0.88, 74 trades, survived 2020/2022.
+   CAUTION: this rule was found after seeing the data -> overfitting risk; it is also the classic 'falling knife' rule, which gives it a reason.
+   PROPOSAL A: H6 skips signals where the drop is worse than -5%.
+2. Vol-scaled sizing beats flat sizing OOS for both (the DESK_RULES test for tiers):
+   I3 Sharpe 0.94 -> 1.21, max DD 14.3% -> 8.22%; H6 0.84 -> 0.91, max DD 9.4% -> 6.2%.
+   PROPOSAL B: inside the approved Probe cap ($50), scale size DOWN by (normal vol / current vol) when volatility is high; never scale up.
+   After Nov 5 the 20-day vol is far above normal, so B would cut size sharply for now.
+3. I3 neighbour check: 100-day average OOS 1.05 (lost -8.29% in 2022), 50-day 0.72. The 200-day rule is not a lucky pick.
+4. Running I3 + H6 together (R10): OOS Sharpe 1.19, stress 0.91, score 23/25, and positive in BOTH
+   2020 (27.39%) and 2022 (15.77%). H6 tends to make money when I3 is switched off (down markets) -> they diversify.
+5. Thursday Nov 5 (-6.37%) would have been an H6 'extreme' signal: skipped anyway by the jobs-report blackout. Quant tracks it hypothetically.
