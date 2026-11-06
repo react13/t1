@@ -37,3 +37,4 @@
 | 2026-11-06 07:30 | Brief | Owner | briefs/2026-11-06.md (confirms approval; asks #4) |
 | 2026-11-06 10:23 | Scout | Quant | findings/2026-11-06_1023_ny-mid.md (payrolls +165k; QQQ +2%) |
 | 2026-11-06 14:23 | Scout | Quant | findings/2026-11-06_1423_ny-close.md |
+| 2026-11-06 18:23 | Scout | Quant | findings/2026-11-06_1823_asia.md (week -5.0%) |
