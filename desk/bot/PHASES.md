@@ -93,3 +93,7 @@ Replays unchanged: H6 10-19 (2 sh OPG), I3 10-30 (6 sh CLS).
 Known limits (accepted for a Probe): the daily-loss guard runs hourly, not every 5 min (scheduled tasks are hourly at most);
   the stale-data halt is permanent until the owner clears it; proposals A/B (questions.md #4) NOT applied.
 Review verdict: PASS for paper Probe from 2026-11-11.
+
+## Builder run 5 — 2026-11-07 04:55 ET (Saturday)
+- No ranked-strategy change; no code change. Offline tests 11/11 pass. Paper account: no open orders, no positions.
+- Blackout list now includes FOMC Dec 8-9 (added by Scout). Proposals A/B (#4) and process change (#5) still await the owner.
