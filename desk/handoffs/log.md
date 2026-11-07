@@ -43,3 +43,4 @@
 | 2026-11-07 03:10 | Quant | Builder | hypotheses_2026-11-07.md (0 survivors); ranked.md multiple-testing note; question #5 |
 | 2026-11-07 04:55 | Builder | Brief | PHASES.md run 5 (no change; tests pass) |
 | 2026-11-07 06:23 | Scout | Quant | findings/2026-11-07_0623_weekend.md |
+| 2026-11-07 10:23 | Scout | Quant | findings/2026-11-07_1023_weekend.md (NVDA Nov 17 verified) |
