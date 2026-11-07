@@ -10,3 +10,6 @@
    A) H6 skips signals after drops worse than -5% (no edge after extreme days; found after seeing data, so overfitting risk).
    B) Within the $50 Probe cap, size DOWN when volatility is high (never up). Better Sharpe and lower drawdown OOS for both.
    Reply "A", "B", "both" or "neither". Default without a reply: approved rules stay exactly as they are.
+5. (2026-11-07 Quant) Process change: testing 10 new ideas EVERY night (121 trial versions so far) keeps lowering the statistical
+   confidence in the approved strategies (deflated-Sharpe I3 0.32 -> 0.08). Proposal: Quant tests new ideas ONCE A WEEK (Sunday, max 10),
+   and on other nights only monitors the paper bots vs their backtest. Reply "weekly" or "keep nightly". Default: keep the current playbook.

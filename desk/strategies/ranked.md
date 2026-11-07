@@ -106,3 +106,11 @@ Nothing below changes the approved rules. Two proposals need the owner's OK (que
 4. Running I3 + H6 together (R10): OOS Sharpe 1.19, stress 0.91, score 23/25, and positive in BOTH
    2020 (27.39%) and 2022 (15.77%). H6 tends to make money when I3 is switched off (down markets) -> they diversify.
 5. Thursday Nov 5 (-6.37%) would have been an H6 'extreme' signal: skipped anyway by the jobs-report blackout. Quant tracks it hypothetically.
+
+
+## Quant v5 note (2026-11-07) — MULTIPLE-TESTING WARNING
+- 10 high-vol regime ideas tested, 0 survivors. Cumulative trials now 121.
+- Refreshed (data through 2026-11-06): I3 OOS Sharpe 0.94, H6 0.84 (unchanged edges).
+- But deflated-Sharpe probabilities FELL as trials grew: I3 0.32 -> 0.079, H6 -> 0.044 (benchmark 'luck' Sharpe now 1.61).
+  Each nightly batch of 10 new ideas raises the bar the approved strategies must clear. The playbook's "10 hypotheses every run" is
+  now eroding the evidence for the desk's own strategies. Proposal for the owner: questions.md #5.
