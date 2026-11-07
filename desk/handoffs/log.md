@@ -38,3 +38,4 @@
 | 2026-11-06 10:23 | Scout | Quant | findings/2026-11-06_1023_ny-mid.md (payrolls +165k; QQQ +2%) |
 | 2026-11-06 14:23 | Scout | Quant | findings/2026-11-06_1423_ny-close.md |
 | 2026-11-06 18:23 | Scout | Quant | findings/2026-11-06_1823_asia.md (week -5.0%) |
+| 2026-11-06 22:23 | Scout | Quant/Builder | findings/2026-11-06_2223_asia.md; CPI Nov 10 + FOMC Dec 8-9 added to EVENTS and bot blackout list |
