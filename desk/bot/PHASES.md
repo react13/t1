@@ -97,3 +97,6 @@ Review verdict: PASS for paper Probe from 2026-11-11.
 ## Builder run 5 — 2026-11-07 04:55 ET (Saturday)
 - No ranked-strategy change; no code change. Offline tests 11/11 pass. Paper account: no open orders, no positions.
 - Blackout list now includes FOMC Dec 8-9 (added by Scout). Proposals A/B (#4) and process change (#5) still await the owner.
+
+## Builder run 6 — 2026-11-08 04:52 ET (Sunday)
+- No change. Tests 11/11. No open orders/positions. Paper start Wed Nov 11 unchanged.
