@@ -54,3 +54,4 @@
 | 2026-11-08 10:23 | Scout | Quant | findings/2026-11-08_1023_weekend.md (nothing new) |
 | 2026-11-08 14:23 | Scout | Quant | findings/2026-11-08_1423_weekend.md (nothing new) |
 | 2026-11-08 16:50 | Weekly | Owner | briefs/weekly_2026-11-08.md + strategies/champion.md (email) |
+| 2026-11-08 18:23 | Scout | Quant | findings/2026-11-08_1823_asia.md |
