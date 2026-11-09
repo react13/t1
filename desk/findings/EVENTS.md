@@ -8,6 +8,6 @@ Last updated: Scout 2026-11-06 22:23 ET. NOTE: Nov 5 QQQ -6.37% = 4th-worst day 
 | Fri Nov 6 08:30 | Employment Situation (Oct): DONE +165k, UE 4.1% | BLS text via search + CNBC | No launches Thu-Fri |
 | Tue Nov 10 08:30 | CPI (Oct) | Several schedule sites agree (BLS blocked) | No launches Mon-Tue |
 | Wed Dec 9 14:00 | FOMC decision + SEP (meeting Dec 8-9); hike odds ~78% after jobs | Fed calendar page (via search) | Blackout Dec 8-9 (in bot list) |
-| Tue Nov 17 AMC (~16:20 ET) | NVIDIA FQ3 FY27 earnings | VERIFIED (investor.nvidia.com, 2026-10-28) | Overnight gap risk; I3 holds overnight if filter ON — note for owner |
+| Tue Nov 17 AMC (~16:20 ET) | NVIDIA FQ3 FY27 earnings — NOTE: board probe re CEO opened Nov 8-9 | VERIFIED (investor.nvidia.com, 2026-10-28) | Overnight gap risk; I3 holds overnight if filter ON — note for owner |
 | Fri Nov 13 08:30 | PPI (Oct) | secondary (TipRanks) | tier-2 |
 | Fri Nov 20 | Monthly OPEX (3rd Friday) | Rule-based date | Hypothesis window |
