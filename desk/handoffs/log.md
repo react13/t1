@@ -63,3 +63,4 @@
 | 2026-11-09 07:30 | Brief | Owner | briefs/2026-11-09.md (in-session + email) |
 | 2026-11-09 10:23 | Scout | Quant | findings/2026-11-09_1023_ny-mid.md (QQQ +2.7%, NVDA -4.5%) |
 | 2026-11-09 14:23 | Scout | Quant | findings/2026-11-09_1423_ny-close.md |
+| 2026-11-09 18:23 | Scout | Quant | findings/2026-11-09_1823_asia.md (QQQ +3.5%, 0.1% under 200-day) |
