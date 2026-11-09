@@ -100,3 +100,9 @@ Review verdict: PASS for paper Probe from 2026-11-11.
 
 ## Builder run 6 — 2026-11-08 04:52 ET (Sunday)
 - No change. Tests 11/11. No open orders/positions. Paper start Wed Nov 11 unchanged.
+
+## Builder run 7 — 2026-11-09 04:55 ET (pre-flight for Wed Nov 11)
+- Tests 11/11. QQQ asset: tradable, active, NASDAQ. Paper account ACTIVE, trading not blocked, $100k.
+- Pattern-day-trader risk: none (I3 = close->next open, H6 = multi-day; no same-day round trips).
+- T2 challenger (Quant v7) NOT built: not approved; tracked only.
+- Still untested until Wed: OPG/CLS acceptance on paper (the start-date guard blocks any earlier test order).
