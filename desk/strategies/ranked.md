@@ -114,3 +114,15 @@ Nothing below changes the approved rules. Two proposals need the owner's OK (que
 - But deflated-Sharpe probabilities FELL as trials grew: I3 0.32 -> 0.079, H6 -> 0.044 (benchmark 'luck' Sharpe now 1.61).
   Each nightly batch of 10 new ideas raises the bar the approved strategies must clear. The playbook's "10 hypotheses every run" is
   now eroding the evidence for the desk's own strategies. Proposal for the owner: questions.md #5.
+
+
+## Quant v7 update (2026-11-09)
+### Challenger candidate: T2 overnight-after-weak-close — 18/25 — PROVISIONAL
+- Rule: if QQQ closes in the bottom 30% of its day range, buy at the close, sell at the next open. Thesis: closing-auction selling overshoots
+  and partly reverses overnight; who loses: forced MOC sellers.
+- IS Sharpe 0.78 (312 nights), OOS 0.69 (342), stress 0.7; 2022 -1.25% (failed the 2022 check);
+  DSR 0.011 with 161 trials -> NOT significant. Exactly at the 18 threshold.
+- Overlaps with I3 (both overnight). Not proposed for paper; tracked as challenger in champion.md.
+### I3 variant noted, NOT proposed: T1 skip Friday nights — 20/25
+- OOS 1.0 vs I3 0.94; IS 1.33 vs 1.12. Small gain, found after 161 trials -> likely partly luck.
+  The approved I3 rule stays unchanged.
