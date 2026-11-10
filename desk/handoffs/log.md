@@ -65,3 +65,4 @@
 | 2026-11-09 14:23 | Scout | Quant | findings/2026-11-09_1423_ny-close.md |
 | 2026-11-09 18:23 | Scout | Quant | findings/2026-11-09_1823_asia.md (QQQ +3.5%, 0.1% under 200-day) |
 | 2026-11-09 22:23 | Scout | Quant | findings/2026-11-09_2223_asia.md (nothing new) |
+| 2026-11-10 02:23 | Scout | Quant | findings/2026-11-10_0223_london.md (CPI consensus) |
