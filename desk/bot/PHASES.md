@@ -106,3 +106,7 @@ Review verdict: PASS for paper Probe from 2026-11-11.
 - Pattern-day-trader risk: none (I3 = close->next open, H6 = multi-day; no same-day round trips).
 - T2 challenger (Quant v7) NOT built: not approved; tracked only.
 - Still untested until Wed: OPG/CLS acceptance on paper (the start-date guard blocks any earlier test order).
+
+## Builder run 8 — 2026-11-10 04:55 ET (eve of paper start)
+- Tests 11/11. Clean start: no state files, no orders ever placed on the paper account. PAPER_START=2026-11-11 guard in place; Nov 11 not a blackout date.
+- Wed flow: 08:07 morning (I3 flat; H6 checks Mon->Tue close), hourly guard, 15:40 close (I3 15:45-price vs 200-day avg; QQQ closed Mon 0.1% below it).

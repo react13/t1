@@ -67,3 +67,4 @@
 | 2026-11-09 22:23 | Scout | Quant | findings/2026-11-09_2223_asia.md (nothing new) |
 | 2026-11-10 02:23 | Scout | Quant | findings/2026-11-10_0223_london.md (CPI consensus) |
 | 2026-11-10 03:10 | Quant | Builder | hypotheses_2026-11-10.md (0 survivors; I3 Mon-Wed variant noted; trials 181) |
+| 2026-11-10 04:55 | Builder | Brief | PHASES.md run 8 (ready for Nov 11) |
