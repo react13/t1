@@ -126,3 +126,10 @@ Nothing below changes the approved rules. Two proposals need the owner's OK (que
 ### I3 variant noted, NOT proposed: T1 skip Friday nights — 20/25
 - OOS 1.0 vs I3 0.94; IS 1.33 vs 1.12. Small gain, found after 161 trials -> likely partly luck.
   The approved I3 rule stays unchanged.
+
+
+## Quant v8 note (2026-11-10)
+- Second I3 weekday variant: U10 'I3 only Mon-Wed nights' 22/25, OOS 1.09 (IS 1.29), stress 0.75.
+  Together with T1 (skip Friday nights, OOS 1.00) this hints Thu/Fri nights add little to I3. But both were found by searching
+  (181 cumulative trials) -> NOT proposed. Candidate for a single pre-registered test once paper data exists.
+- 0 new survivors. Notable failure: U3 'hold overnight after a +2% day' (OOS -0.45, -12% in 2022).

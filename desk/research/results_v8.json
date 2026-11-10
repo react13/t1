@@ -1,0 +1,566 @@
+{
+ "U1": {
+  "desc": "Day after a +3% day: long open->close (continuation)",
+  "IS": {
+   "sharpe": -0.72,
+   "ann_ret": -2.43,
+   "maxdd": 14.95,
+   "mar": -0.16,
+   "trades": 23,
+   "avg_bp": -62.83,
+   "win": 39.1,
+   "t": -1.88
+  },
+  "OOS": {
+   "sharpe": 0.09,
+   "ann_ret": 0.34,
+   "maxdd": 8.89,
+   "mar": 0.04,
+   "trades": 27,
+   "avg_bp": 6.01,
+   "win": 59.3,
+   "t": 0.2
+  },
+  "OOS_stress": {
+   "sharpe": 0.1,
+   "ann_ret": 0.38,
+   "maxdd": 8.8,
+   "mar": 0.04,
+   "trades": 27,
+   "avg_bp": 6.76,
+   "win": 59.3,
+   "t": 0.22
+  },
+  "years": {
+   "2016": 0.15,
+   "2017": 0.0,
+   "2018": -1.45,
+   "2019": 0.93,
+   "2020": -12.76,
+   "2021": -1.33,
+   "2022": 3.43,
+   "2023": 0.39,
+   "2024": 0.84,
+   "2025": -0.42,
+   "2026": -2.62
+  },
+  "score": {
+   "sharpe": "2",
+   "drawdown": "2",
+   "trades": 1,
+   "edge": "2",
+   "wf": "1",
+   "total": "8",
+   "years_pos_pct": 45
+  },
+  "dsr": 0.0
+ },
+ "U2": {
+  "desc": "Day after a +3% day: short open->close (fade)",
+  "IS": {
+   "sharpe": 0.69,
+   "ann_ret": 2.31,
+   "maxdd": 3.64,
+   "mar": 0.64,
+   "trades": 23,
+   "avg_bp": 59.83,
+   "win": 60.9,
+   "t": 1.79
+  },
+  "OOS": {
+   "sharpe": -0.14,
+   "ann_ret": -0.51,
+   "maxdd": 8.98,
+   "mar": -0.06,
+   "trades": 27,
+   "avg_bp": -9.01,
+   "win": 40.7,
+   "t": -0.3
+  },
+  "OOS_stress": {
+   "sharpe": -0.19,
+   "ann_ret": -0.72,
+   "maxdd": 9.66,
+   "mar": -0.07,
+   "trades": 27,
+   "avg_bp": -12.76,
+   "win": 40.7,
+   "t": -0.42
+  },
+  "years": {
+   "2016": -0.18,
+   "2017": 0.0,
+   "2018": 1.3,
+   "2019": -0.96,
+   "2020": 12.34,
+   "2021": 1.27,
+   "2022": -3.97,
+   "2023": -0.42,
+   "2024": -0.87,
+   "2025": 0.36,
+   "2026": 2.47
+  },
+  "score": {
+   "sharpe": "1",
+   "drawdown": "1",
+   "trades": 1,
+   "edge": "1",
+   "wf": "1",
+   "total": "5",
+   "years_pos_pct": 45
+  },
+  "dsr": 0.0
+ },
+ "U3": {
+  "desc": "Overnight hold after a +2% day",
+  "IS": {
+   "sharpe": -0.43,
+   "ann_ret": -2.55,
+   "maxdd": 27.75,
+   "mar": -0.09,
+   "trades": 57,
+   "avg_bp": -26.55,
+   "win": 56.1,
+   "t": -1.06
+  },
+  "OOS": {
+   "sharpe": -0.45,
+   "ann_ret": -1.87,
+   "maxdd": 13.9,
+   "mar": -0.13,
+   "trades": 91,
+   "avg_bp": -9.87,
+   "win": 49.5,
+   "t": -0.99
+  },
+  "OOS_stress": {
+   "sharpe": -0.51,
+   "ann_ret": -2.24,
+   "maxdd": 14.93,
+   "mar": -0.15,
+   "trades": 91,
+   "avg_bp": -11.8,
+   "win": 44.0,
+   "t": -1.13
+  },
+  "years": {
+   "2016": -0.14,
+   "2017": -0.12,
+   "2018": -3.68,
+   "2019": -0.44,
+   "2020": -12.51,
+   "2021": 1.77,
+   "2022": -12.0,
+   "2023": 0.61,
+   "2024": 0.02,
+   "2025": 0.16,
+   "2026": 2.22
+  },
+  "score": {
+   "sharpe": "1",
+   "drawdown": "1",
+   "trades": 3,
+   "edge": "1",
+   "wf": "1",
+   "total": "7",
+   "years_pos_pct": 45
+  },
+  "dsr": 0.0
+ },
+ "U4": {
+  "desc": "Close within 1% below the 200-day avg -> long 3 days",
+  "IS": {
+   "sharpe": 0.18,
+   "ann_ret": 0.53,
+   "maxdd": 6.62,
+   "mar": 0.08,
+   "trades": 8,
+   "avg_bp": 39.22,
+   "win": 62.5,
+   "t": 0.59
+  },
+  "OOS": {
+   "sharpe": 0.2,
+   "ann_ret": 0.96,
+   "maxdd": 8.92,
+   "mar": 0.11,
+   "trades": 11,
+   "avg_bp": 41.96,
+   "win": 36.4,
+   "t": 0.36
+  },
+  "OOS_stress": {
+   "sharpe": 0.17,
+   "ann_ret": 0.81,
+   "maxdd": 8.74,
+   "mar": 0.09,
+   "trades": 11,
+   "avg_bp": 35.25,
+   "win": 36.4,
+   "t": 0.31
+  },
+  "years": {
+   "2016": 0.0,
+   "2017": 0.0,
+   "2018": -1.32,
+   "2019": 4.45,
+   "2020": 0.0,
+   "2021": 0.0,
+   "2022": -8.92,
+   "2023": 11.61,
+   "2024": 0.0,
+   "2025": -0.32,
+   "2026": 2.24
+  },
+  "score": {
+   "sharpe": "2",
+   "drawdown": "2",
+   "trades": 1,
+   "edge": "2",
+   "wf": "1",
+   "total": "8",
+   "years_pos_pct": 27
+  },
+  "dsr": 0.0
+ },
+ "U5": {
+  "desc": "Gap up >1% after a down week -> long open->close",
+  "IS": {
+   "sharpe": 0.93,
+   "ann_ret": 4.47,
+   "maxdd": 5.05,
+   "mar": 0.89,
+   "trades": 57,
+   "avg_bp": 46.66,
+   "win": 68.4,
+   "t": 2.36
+  },
+  "OOS": {
+   "sharpe": -0.14,
+   "ann_ret": -0.79,
+   "maxdd": 9.73,
+   "mar": -0.08,
+   "trades": 75,
+   "avg_bp": -5.06,
+   "win": 52.0,
+   "t": -0.31
+  },
+  "OOS_stress": {
+   "sharpe": -0.18,
+   "ann_ret": -1.01,
+   "maxdd": 9.33,
+   "mar": -0.11,
+   "trades": 75,
+   "avg_bp": -6.48,
+   "win": 53.3,
+   "t": -0.41
+  },
+  "years": {
+   "2016": 1.29,
+   "2017": 1.26,
+   "2018": 0.02,
+   "2019": 6.07,
+   "2020": 17.13,
+   "2021": 0.82,
+   "2022": 2.06,
+   "2023": 1.41,
+   "2024": 0.54,
+   "2025": -6.73,
+   "2026": -1.07
+  },
+  "score": {
+   "sharpe": "1",
+   "drawdown": "1",
+   "trades": 3,
+   "edge": "1",
+   "wf": "4",
+   "total": "10",
+   "years_pos_pct": 82
+  },
+  "dsr": 0.0
+ },
+ "U6": {
+  "desc": "Prior week > +2% -> long Mon open to Fri close",
+  "IS": {
+   "sharpe": -0.03,
+   "ann_ret": -0.27,
+   "maxdd": 18.09,
+   "mar": -0.01,
+   "trades": 71,
+   "avg_bp": -2.25,
+   "win": 56.3,
+   "t": -0.1
+  },
+  "OOS": {
+   "sharpe": 0.3,
+   "ann_ret": 3.08,
+   "maxdd": 20.12,
+   "mar": 0.15,
+   "trades": 69,
+   "avg_bp": 21.42,
+   "win": 59.4,
+   "t": 0.7
+  },
+  "OOS_stress": {
+   "sharpe": 0.22,
+   "ann_ret": 2.21,
+   "maxdd": 20.95,
+   "mar": 0.11,
+   "trades": 69,
+   "avg_bp": 15.38,
+   "win": 56.5,
+   "t": 0.5
+  },
+  "years": {
+   "2016": 7.79,
+   "2017": -0.19,
+   "2018": -10.71,
+   "2019": 10.44,
+   "2020": -8.65,
+   "2021": -0.26,
+   "2022": -12.2,
+   "2023": 9.54,
+   "2024": 7.33,
+   "2025": 2.0,
+   "2026": 8.11
+  },
+  "score": {
+   "sharpe": "2",
+   "drawdown": "2",
+   "trades": 3,
+   "edge": "2",
+   "wf": "2",
+   "total": "11",
+   "years_pos_pct": 55
+  },
+  "dsr": 0.001
+ },
+ "U7": {
+  "desc": "Prior week < -2% -> long Monday open->close only",
+  "IS": {
+   "sharpe": -0.02,
+   "ann_ret": -0.08,
+   "maxdd": 7.37,
+   "mar": -0.01,
+   "trades": 38,
+   "avg_bp": -1.29,
+   "win": 50.0,
+   "t": -0.05
+  },
+  "OOS": {
+   "sharpe": 0.93,
+   "ann_ret": 4.68,
+   "maxdd": 6.4,
+   "mar": 0.73,
+   "trades": 58,
+   "avg_bp": 38.73,
+   "win": 65.5,
+   "t": 2.1
+  },
+  "OOS_stress": {
+   "sharpe": 0.82,
+   "ann_ret": 4.15,
+   "maxdd": 6.82,
+   "mar": 0.61,
+   "trades": 58,
+   "avg_bp": 34.35,
+   "win": 63.8,
+   "t": 1.85
+  },
+  "years": {
+   "2016": 1.86,
+   "2017": 0.96,
+   "2018": -0.35,
+   "2019": -5.12,
+   "2020": -0.42,
+   "2021": 2.58,
+   "2022": 5.29,
+   "2023": 5.42,
+   "2024": 5.8,
+   "2025": 5.61,
+   "2026": 0.34
+  },
+  "score": {
+   "sharpe": "3",
+   "drawdown": "4",
+   "trades": 2,
+   "edge": "4",
+   "wf": "4",
+   "total": "17",
+   "years_pos_pct": 73
+  },
+  "dsr": 0.03
+ },
+ "U8": {
+  "desc": "Close back above 20-day avg after 5 days below -> long 3 days",
+  "IS": {
+   "sharpe": 0.29,
+   "ann_ret": 1.17,
+   "maxdd": 5.34,
+   "mar": 0.22,
+   "trades": 26,
+   "avg_bp": 26.77,
+   "win": 57.7,
+   "t": 0.79
+  },
+  "OOS": {
+   "sharpe": 0.82,
+   "ann_ret": 4.52,
+   "maxdd": 4.83,
+   "mar": 0.94,
+   "trades": 27,
+   "avg_bp": 80.45,
+   "win": 66.7,
+   "t": 1.74
+  },
+  "OOS_stress": {
+   "sharpe": 0.79,
+   "ann_ret": 4.37,
+   "maxdd": 5.13,
+   "mar": 0.85,
+   "trades": 27,
+   "avg_bp": 77.77,
+   "win": 66.7,
+   "t": 1.66
+  },
+  "years": {
+   "2016": 1.65,
+   "2017": 5.14,
+   "2018": -0.76,
+   "2019": 0.03,
+   "2020": 2.12,
+   "2021": -1.22,
+   "2022": 1.38,
+   "2023": 8.9,
+   "2024": 1.66,
+   "2025": 3.98,
+   "2026": 5.8
+  },
+  "score": {
+   "sharpe": "3",
+   "drawdown": "4",
+   "trades": 1,
+   "edge": "3",
+   "wf": "4",
+   "total": "15",
+   "years_pos_pct": 82
+  },
+  "dsr": 0.017
+ },
+ "U9": {
+  "desc": "Close below 20-day avg after 10 days above -> short 3 days",
+  "IS": {
+   "sharpe": 0.04,
+   "ann_ret": 0.21,
+   "maxdd": 10.57,
+   "mar": 0.02,
+   "trades": 36,
+   "avg_bp": 3.54,
+   "win": 47.2,
+   "t": 0.09
+  },
+  "OOS": {
+   "sharpe": -0.55,
+   "ann_ret": -2.51,
+   "maxdd": 15.54,
+   "mar": -0.16,
+   "trades": 25,
+   "avg_bp": -48.25,
+   "win": 28.0,
+   "t": -1.56
+  },
+  "OOS_stress": {
+   "sharpe": -0.53,
+   "ann_ret": -2.45,
+   "maxdd": 15.27,
+   "mar": -0.16,
+   "trades": 25,
+   "avg_bp": -47.05,
+   "win": 28.0,
+   "t": -1.51
+  },
+  "years": {
+   "2016": 1.11,
+   "2017": -8.06,
+   "2018": 1.27,
+   "2019": 1.42,
+   "2020": 4.78,
+   "2021": 0.75,
+   "2022": -3.11,
+   "2023": -1.93,
+   "2024": -5.03,
+   "2025": -1.75,
+   "2026": -0.24
+  },
+  "score": {
+   "sharpe": "1",
+   "drawdown": "1",
+   "trades": 1,
+   "edge": "1",
+   "wf": "1",
+   "total": "5",
+   "years_pos_pct": 45
+  },
+  "dsr": 0.0
+ },
+ "U10": {
+  "desc": "I3 but only Mon-Wed nights",
+  "IS": {
+   "sharpe": 1.29,
+   "ann_ret": 9.0,
+   "maxdd": 5.84,
+   "mar": 1.54,
+   "trades": 722,
+   "avg_bp": 7.41,
+   "win": 59.7,
+   "t": 3.15
+  },
+  "OOS": {
+   "sharpe": 1.09,
+   "ann_ret": 8.19,
+   "maxdd": 7.08,
+   "mar": 1.16,
+   "trades": 543,
+   "avg_bp": 7.24,
+   "win": 56.2,
+   "t": 2.39
+  },
+  "OOS_stress": {
+   "sharpe": 0.75,
+   "ann_ret": 5.69,
+   "maxdd": 7.72,
+   "mar": 0.74,
+   "trades": 543,
+   "avg_bp": 5.03,
+   "win": 54.5,
+   "t": 1.65
+  },
+  "years": {
+   "2016": 0.27,
+   "2017": 4.73,
+   "2018": 0.76,
+   "2019": 9.1,
+   "2020": 31.85,
+   "2021": 6.79,
+   "2022": -3.4,
+   "2023": 9.42,
+   "2024": 23.18,
+   "2025": 10.87,
+   "2026": -0.76
+  },
+  "score": {
+   "sharpe": "4",
+   "drawdown": "5",
+   "trades": 5,
+   "edge": "4",
+   "wf": "4",
+   "total": "22",
+   "years_pos_pct": 82
+  },
+  "dsr": 0.07
+ },
+ "_meta": {
+  "n_trials_cumulative": 181,
+  "last": "2026-11-09"
+ }
+}
