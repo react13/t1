@@ -71,3 +71,4 @@
 | 2026-11-10 06:23 | Scout | Quant | findings/2026-11-10_0623_ny-pre.md |
 | 2026-11-10 07:30 | Brief | Owner | briefs/2026-11-10.md (in-session + email) |
 | 2026-11-10 10:23 | Scout | Quant | findings/2026-11-10_1023_ny-mid.md (hot CPI) |
+| 2026-11-10 14:23 | Scout | Quant | findings/2026-11-10_1423_ny-close.md |
