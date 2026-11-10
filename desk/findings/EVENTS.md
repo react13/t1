@@ -6,7 +6,7 @@ Last updated: Scout 2026-11-06 22:23 ET. NOTE: Nov 5 QQQ -6.37% = 4th-worst day 
 | Tue Nov 3 AMC | AMD earnings (call 17:00) | DONE: beat, AH +7% | Stacks with election overnight gap risk |
 | Wed Nov 4 AMC | Qualcomm FQ4 results | DONE: light guide, AH -2% to -7% | Semis weak |
 | Fri Nov 6 08:30 | Employment Situation (Oct): DONE +165k, UE 4.1% | BLS text via search + CNBC | No launches Thu-Fri |
-| Tue Nov 10 08:30 | CPI (Oct): cons. +0.3% m/m headline, +0.2% core | Several schedule sites agree (BLS blocked) | No launches Mon-Tue |
+| Tue Nov 10 08:30 | CPI (Oct): DONE — HOT +0.4% headline, +0.3% core | Several schedule sites agree (BLS blocked) | No launches Mon-Tue |
 | Wed Dec 9 14:00 | FOMC decision + SEP (meeting Dec 8-9); hike odds ~78% after jobs | Fed calendar page (via search) | Blackout Dec 8-9 (in bot list) |
 | Tue Nov 17 AMC (~16:20 ET) | NVIDIA FQ3 FY27 earnings — NOTE: board probe re CEO opened Nov 8-9 | VERIFIED (investor.nvidia.com, 2026-10-28) | Overnight gap risk; I3 holds overnight if filter ON — note for owner |
 | Fri Nov 13 08:30 | PPI (Oct) | secondary (TipRanks) | tier-2 |
