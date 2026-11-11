@@ -1,0 +1,2 @@
+date,action,qty,ref_price,fill_price,slip_bp,pnl,note,mnq_equiv_contracts,pnl_per_1_mnq
+2026-11-11,BUY-CLS,6,691.125,,,,risk $50; ma 680.66,0.073,
