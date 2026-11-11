@@ -1,14 +1,7 @@
 {
- "position": {
-  "qty": 6,
-  "ref": 691.125,
-  "entry_day": "2026-11-11",
-  "order": "1a03d2b0-1ee8-495b-8012-48a834b18dce",
-  "dry": false,
-  "risk": 50
- },
+ "position": null,
  "losses_in_row": 0,
- "halted": null,
+ "halted": "2026-11-11 MOC buy expired (not filled) -> no position, no sell; owner check",
  "first_trade_date": null,
  "day": {}
 }

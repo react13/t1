@@ -68,6 +68,13 @@ def morning():
     s = base.load_state(); today = str(base.now().date()); p = s["position"]
     if not p: return log("flat")
     if p["dry"] and base.LIVE: return log("state holds a DRY-RUN position; clear state_i3.json before paper trading")
+    if base.LIVE:   # never sell shares we may not hold (an unfilled MOC buy + OPG sell = accidental short)
+        try: buy = api(TRADE_URL, "/v2/orders:by_client_order_id", q={"client_order_id": f"i3-buy-{p['entry_day']}"})
+        except Exception as e: return halt(s, f"morning: cannot read entry order ({e}) -> no sell, owner check")
+        if buy.get("status") != "filled":
+            s["position"] = None; append_log([today, "NO-SELL", 0, "", "", "", "", f"entry {p['entry_day']} buy {buy.get('status')}"])
+            return halt(s, f"{p['entry_day']} MOC buy {buy.get('status')} (not filled) -> no position, no sell; owner check")
+        p["qty"] = int(float(buy["filled_qty"]))
     send({"symbol": SYMBOL, "qty": str(p["qty"]), "side": "sell", "type": "market", "time_in_force": "opg", "client_order_id": f"i3-sell-{today}"})
     append_log([today, "SELL-OPG", p["qty"], "", "", "", "", f"entered {p['entry_day']}"])
     if base.LIVE: s["pending_reconcile"] = {**p, "exit_day": today}

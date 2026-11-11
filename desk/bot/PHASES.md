@@ -114,3 +114,10 @@ Review verdict: PASS for paper Probe from 2026-11-11.
 ## Builder run 10 — 2026-11-11 04:56 ET (first paper day)
 - Added MNQ reporting (owner request): trade logs now carry mnq_equiv_contracts and pnl_per_1_mnq (NQ/QQQ ratio 41.3, ESTIMATE). Reporting only; sizing and orders unchanged (QQQ on Alpaca, option (a) default until owner answers #6).
 - Test fix: the start-date test froze the clock to Nov 10 (today is the start date). Tests 13/13. Paper account: still no orders.
+
+## 2026-11-11 18:24 ET — incident: I3 MOC buy expired on Alpaca paper
+- The 15:40 run sent `i3-buy-2026-11-11` (6 QQQ, market, tif=cls). It was accepted, then **expired at 16:01:49 ET with 0 filled**. Positions: none.
+- Bug: state_i3.json recorded 6 shares anyway. The 08:07 morning run would have sent an OPG sell for 6 shares -> an accidental short.
+- Fix: morning() now reads the entry order first. If it is not filled: no sell, position cleared, I3 halted (owner check). It sells only the filled qty. Test 3b added (14 checks pass).
+- Live state corrected via that path (no order sent). I3 is HALTED until the owner clears `halted` in state_i3.json.
+- Open: why Alpaca paper let a CLS order submitted at 15:40 expire. Until known, the MOC entry can't be relied on. H6's exit is also a CLS sell (same risk: it would think it's flat while still holding). H6 is flat now. Fix before H6's next signal.

@@ -56,6 +56,13 @@ FILLS.update({"i3-buy-2026-11-18": {"status": "canceled", "filled_avg_price": No
 i3_bot.reconcile(); s = json.load(open(base.STATE))
 check(s["halted"] and "not both filled" in s["halted"], "unfilled order -> halt for owner check")
 
+# 3b. expired MOC buy -> morning sends NO sell (would be a short), clears position, halts
+json.dump({"position": {"qty": 6, "ref": 691, "entry_day": "2026-11-11", "order": "x", "dry": False, "risk": 50},
+           "losses_in_row": 0, "halted": None, "first_trade_date": None, "day": {}}, open(base.STATE, "w"))
+FILLS["i3-buy-2026-11-11"] = {"status": "expired", "filled_avg_price": None, "filled_qty": "0"}
+n0 = len(sent); i3_bot.morning(); s = json.load(open(base.STATE))
+check(len(sent) == n0 and s["position"] is None and "expired" in (s["halted"] or ""), "expired MOC buy -> no OPG sell, flat, halted")
+
 # 4. desk-wide daily budget: an I3 loss today shrinks H6's risk budget
 json.dump({"day": {"2026-11-20": {"realized": -300.0, "losses": 1}}}, open(os.path.join(tmp, "state_i3.json"), "w"))
 json.dump({"position": None, "losses_in_row": 0, "halted": None, "day": {}}, open(os.path.join(tmp, "state.json"), "w"))
