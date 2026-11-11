@@ -81,3 +81,4 @@
 | 2026-11-11 03:10 | Quant | Owner | hypotheses_2026-11-11.md: 0 MNQ-fit survivors; trials 213 |
 | 2026-11-11 04:57 | Builder | Brief | MNQ reporting columns; tests 13/13 |
 | 2026-11-11 06:23 | Scout | Quant | findings/2026-11-11_0623_ny-pre.md |
+| 2026-11-11 07:30 | Brief | Owner | briefs/2026-11-11.md (in-session + email) |
