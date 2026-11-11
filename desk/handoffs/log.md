@@ -78,3 +78,4 @@
 | 2026-11-11 01:20 | Quant | Owner | stops re-test FAILED; question #6 (MNQ path) |
 | 2026-11-10 22:23 | Scout | Quant | findings/2026-11-10_2223_asia.md (nothing new) |
 | 2026-11-11 02:23 | Scout | Quant | findings/2026-11-11_0223_london.md |
+| 2026-11-11 03:10 | Quant | Owner | hypotheses_2026-11-11.md: 0 MNQ-fit survivors; trials 213 |

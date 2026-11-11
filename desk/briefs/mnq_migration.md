@@ -53,3 +53,6 @@ VERDICT: stops FAIL for both.
 - H6: stops are hit on 81-88% of trades (a 3-day bounce trade after a -2% day needs room); edge falls to 0.28-0.66 and the $150 version is unstable (IS 0.07).
 - Without stops, 1 MNQ does not fit the rules: I3 5th-pct night -$668 and worst -$2,988; H6 5th pct -$2,093, worst -$3,336 (per contract) vs $350/day.
 => Neither approved strategy can be traded at 1 MNQ inside the $350/day limit. MNQ order flow stays BLOCKED pending an owner decision.
+
+
+## Quant v10 (2026-11-11): 10 intraday ideas sized for 1 MNQ ($300 stop) — 0 survivors (best 17/25, unstable). No MNQ-sized edge found yet.
