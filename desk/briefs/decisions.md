@@ -12,3 +12,6 @@ Owner chose (in session): move the paper probe to real MNQ futures on the NinjaT
 stops; Quant re-tests both strategies with stops BEFORE any MNQ order. QQQ paper probe on Alpaca continues as approved meanwhile.
 Open: per-trade risk at 1 MNQ cannot be $50 (Probe tier) — the smallest meaningful stop is ~$150. Quant tests $150/$250/$300; owner
 then confirms the per-trade risk. Credentials (NT_USERNAME/NT_PASSWORD/NT_CID/NT_SEC) pending from owner.
+
+## 2026-11-11 18:53 ET — DESK SHUT DOWN (owner request)
+All MNQ Desk scheduled tasks disabled (not deleted). I3 and H6 halted in their state files. Alpaca paper account flat, no open orders.

@@ -1,7 +1,7 @@
 {
  "position": null,
  "losses_in_row": 0,
- "halted": "2026-11-11 MOC buy expired (not filled) -> no position, no sell; owner check",
+ "halted": "2026-11-11 owner shut down the desk",
  "first_trade_date": null,
  "day": {}
 }
