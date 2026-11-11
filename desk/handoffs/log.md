@@ -83,3 +83,4 @@
 | 2026-11-11 06:23 | Scout | Quant | findings/2026-11-11_0623_ny-pre.md |
 | 2026-11-11 07:30 | Brief | Owner | briefs/2026-11-11.md (in-session + email) |
 | 2026-11-11 10:23 | Scout | Quant | findings/2026-11-11_1023_ny-mid.md (QQQ above 200-day) |
+| 2026-11-11 14:23 | Scout | Quant | findings/2026-11-11_1423_ny-close.md (QQQ +2.6%, I3 filter likely ON) |
