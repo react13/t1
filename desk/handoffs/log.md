@@ -75,3 +75,4 @@
 | 2026-11-10 18:23 | Scout | Quant | findings/2026-11-10_1823_asia.md (hypothetical H6 +2.48%) |
 | 2026-11-11 00:30 | Owner | Desk | briefs/mnq_migration.md (MNQ paper request; awaiting broker + risk choice) |
 | 2026-11-11 00:45 | Owner | Builder | mnq_migration.md: NinjaTrader demo chosen; awaiting API creds + risk choice |
+| 2026-11-11 01:20 | Quant | Owner | stops re-test FAILED; question #6 (MNQ path) |

@@ -133,3 +133,26 @@ Nothing below changes the approved rules. Two proposals need the owner's OK (que
   Together with T1 (skip Friday nights, OOS 1.00) this hints Thu/Fri nights add little to I3. But both were found by searching
   (181 cumulative trials) -> NOT proposed. Candidate for a single pre-registered test once paper data exists.
 - 0 new survivors. Notable failure: U3 'hold overnight after a +2% day' (OOS -0.45, -12% in 2022).
+
+
+## (copy) Re-test with hard stops (Quant v9, 2026-11-11) — owner's choice "stops + re-test"
+Path: QQQ extended-hours 1-min bars (04:00-20:00 ET); 20:00-04:00 unobserved (gap fills at next price = conservative). 1 MNQ ~= $55,700 (ESTIMATE).
+Stops = % of entry sized to today's MNQ: $150=0.27%, $250=0.45%, $300=0.54%. Costs 1.5 bp RT + 1 bp stop slippage; stress = late + 2x costs.
+$ columns = per 1 MNQ at today's notional, OOS 2022-2026. Cumulative trials 193.
+
+| Variant | IS Sharpe | OOS Sharpe | OOS stress | Stopped | Avg $/trade | 5th pct $ | Worst $ | 2022 % | Score | DSR |
+|---|---|---|---|---|---|---|---|---|---|---|
+| I3 stop none | 1.12 | 0.94 | 0.61 | 0.0% | 28.4 | -668.0 | -2988.0 | -6.66 | 21 | 0.058 |
+| I3 stop $150 (0.27%) | 0.27 | 0.23 | -0.23 | 52.1% | 5.0 | -253.0 | -1366.0 | -2.81 | 15 | 0.001 |
+| I3 stop $250 (0.45%) | 0.22 | -0.06 | -0.51 | 37.3% | -1.6 | -334.0 | -1730.0 | -1.95 | 11 | 0.0 |
+| I3 stop $300 (0.54%) | 0.32 | 0.2 | -0.23 | 31.2% | 5.2 | -354.0 | -1730.0 | -2.85 | 15 | 0.001 |
+| H6 stop none | 0.57 | 0.79 | 0.7 | 0.0% | 341.9 | -2093.0 | -3336.0 | 22.43 | 18 | 0.017 |
+| H6 stop $150 (0.27%) | 0.07 | 0.66 | 0.35 | 87.6% | 173.3 | -164.0 | -204.0 | 13.88 | 16 | 0.001 |
+| H6 stop $250 (0.45%) | 0.59 | 0.33 | 0.27 | 82.5% | 88.4 | -265.0 | -265.0 | 7.81 | 12 | 0.0 |
+| H6 stop $300 (0.54%) | 0.48 | 0.28 | 0.1 | 81.0% | 76.3 | -315.0 | -337.0 | 8.99 | 11 | 0.0 |
+
+VERDICT: stops FAIL for both.
+- I3: any stop cuts OOS Sharpe from 0.94 to <=0.23 and stress goes negative; overnight gaps still blow through stops (worst -$1,366 to -$1,730 per MNQ even WITH a stop).
+- H6: stops are hit on 81-88% of trades (a 3-day bounce trade after a -2% day needs room); edge falls to 0.28-0.66 and the $150 version is unstable (IS 0.07).
+- Without stops, 1 MNQ does not fit the rules: I3 5th-pct night -$668 and worst -$2,988; H6 5th pct -$2,093, worst -$3,336 (per contract) vs $350/day.
+=> Neither approved strategy can be traded at 1 MNQ inside the $350/day limit. MNQ order flow stays BLOCKED pending an owner decision.

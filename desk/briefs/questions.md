@@ -13,3 +13,7 @@
 5. (2026-11-07 Quant) Process change: testing 10 new ideas EVERY night (121 trial versions so far) keeps lowering the statistical
    confidence in the approved strategies (deflated-Sharpe I3 0.32 -> 0.08). Proposal: Quant tests new ideas ONCE A WEEK (Sunday, max 10),
    and on other nights only monitors the paper bots vs their backtest. Reply "weekly" or "keep nightly". Default: keep the current playbook.
+6. (2026-11-11 Quant) MNQ re-test with stops FAILED (details: desk/briefs/mnq_migration.md). At 1 MNQ neither strategy fits $350/day.
+   Options: (a) keep paper trading QQQ on Alpaca as approved (correct size, no change) and report it in MNQ terms;
+   (b) MNQ on the NinjaTrader demo WITHOUT stops, with limits raised to fit 1 contract (I3 worst ~-$3,000/night; H6 worst ~-$3,300);
+   (c) I3 only on MNQ without stops, limits raised for I3 only. Reply "a", "b" or "c". Default: (a).
