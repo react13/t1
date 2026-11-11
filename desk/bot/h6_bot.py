@@ -89,11 +89,22 @@ def blackout(d):
         if line.strip() and not line.startswith("#") and line.split()[0] == d: return True
     return False
 
+NQ_PER_QQQ = 41.3   # ESTIMATE: NQ futures / QQQ price ratio (Nov 2026, incl. basis). Reporting only — never used for sizing or orders.
+MNQ_PER_SHARE = 1 / (2 * NQ_PER_QQQ)   # 1 MNQ = $2 x NQ ~= 82.6 QQQ shares
+
+def mnq_cols(row):
+    """Owner request (2026-11-11): show every trade in MNQ terms. Adds: MNQ-equivalent contracts and P&L per 1 MNQ contract."""
+    try: qty = float(row[2])
+    except (TypeError, ValueError): return ["", ""]
+    try: pnl1 = f"{float(row[6]) / qty / MNQ_PER_SHARE:.2f}" if qty else ""
+    except (TypeError, ValueError): pnl1 = ""
+    return [f"{qty * MNQ_PER_SHARE:.3f}", pnl1]
+
 def append_log(row):
     new = not os.path.exists(LOG)
     with open(LOG, "a") as f:
-        if new: f.write("date,action,qty,ref_price,fill_price,slip_bp,pnl,note\n")
-        f.write(",".join(str(x) for x in row) + "\n")
+        if new: f.write("date,action,qty,ref_price,fill_price,slip_bp,pnl,note,mnq_equiv_contracts,pnl_per_1_mnq\n")
+        f.write(",".join(str(x) for x in list(row) + mnq_cols(row)) + "\n")
 
 PAPER_START = "2026-11-11"   # owner approval (desk/briefs/decisions.md 2026-11-06): paper orders from Wed Nov 11, not before
 

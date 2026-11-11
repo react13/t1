@@ -110,3 +110,7 @@ Review verdict: PASS for paper Probe from 2026-11-11.
 ## Builder run 8 — 2026-11-10 04:55 ET (eve of paper start)
 - Tests 11/11. Clean start: no state files, no orders ever placed on the paper account. PAPER_START=2026-11-11 guard in place; Nov 11 not a blackout date.
 - Wed flow: 08:07 morning (I3 flat; H6 checks Mon->Tue close), hourly guard, 15:40 close (I3 15:45-price vs 200-day avg; QQQ closed Mon 0.1% below it).
+
+## Builder run 10 — 2026-11-11 04:56 ET (first paper day)
+- Added MNQ reporting (owner request): trade logs now carry mnq_equiv_contracts and pnl_per_1_mnq (NQ/QQQ ratio 41.3, ESTIMATE). Reporting only; sizing and orders unchanged (QQQ on Alpaca, option (a) default until owner answers #6).
+- Test fix: the start-date test froze the clock to Nov 10 (today is the start date). Tests 13/13. Paper account: still no orders.

@@ -79,3 +79,4 @@
 | 2026-11-10 22:23 | Scout | Quant | findings/2026-11-10_2223_asia.md (nothing new) |
 | 2026-11-11 02:23 | Scout | Quant | findings/2026-11-11_0223_london.md |
 | 2026-11-11 03:10 | Quant | Owner | hypotheses_2026-11-11.md: 0 MNQ-fit survivors; trials 213 |
+| 2026-11-11 04:57 | Builder | Brief | MNQ reporting columns; tests 13/13 |

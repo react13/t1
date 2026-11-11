@@ -45,7 +45,9 @@ check(base.kill_switch(s, check_data=False) is not None, "kill switch fires (3 l
 check(base.kill_switch({"halted": None, "losses_in_row": 3}, check_data=False) == "3 losses in a row", "3 losses alone fire the kill switch")
 check(base.kill_switch({"halted": None, "losses_in_row": 2}, check_data=False) is None, "2 losses do not")
 # start-date guard: a LIVE send before Nov 11 is blocked
+base.ASOF = "2026-11-10"                      # freeze the clock: the guard must block on the day before the start
 r = base.send({"symbol": "QQQ", "qty": "1", "side": "buy"})
+base.ASOF = None
 check(r["status"] == "blocked" and len(sent) == 0, "paper order before 2026-11-11 is blocked")
 # 3. unfilled order halts instead of guessing
 json.dump({"position": None, "losses_in_row": 0, "halted": None, "first_trade_date": None, "day": {},
@@ -61,4 +63,7 @@ check(base.risk_budget({"day": {}}, "2026-11-20") == 50.0, "budget = min($50 tie
 json.dump({"day": {"2026-11-20": {"realized": -330.0, "losses": 1}}}, open(os.path.join(tmp, "state_i3.json"), "w"))
 check(base.risk_budget({"day": {}}, "2026-11-20") == 20.0, "after -$330 desk loss, H6 budget is $20 (desk-wide $350)")
 check(len(sent) == 0, "no orders were sent by any test")
+c = base.mnq_cols(["d","RECONCILE",6,"","","","18.06",""])
+check(c[0]=="0.073" and abs(float(c[1]) - 18.06/6*82.6) < 0.05, "MNQ reporting columns: 6 sh = 0.073 MNQ, P&L scaled per contract")
+log = open(base.LOG).read().splitlines(); check(log[0].endswith("mnq_equiv_contracts,pnl_per_1_mnq"), "trade log has MNQ columns")
 print(f"\n{ok} checks passed"); shutil.rmtree(tmp)
