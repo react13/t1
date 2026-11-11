@@ -73,3 +73,4 @@
 | 2026-11-10 10:23 | Scout | Quant | findings/2026-11-10_1023_ny-mid.md (hot CPI) |
 | 2026-11-10 14:23 | Scout | Quant | findings/2026-11-10_1423_ny-close.md |
 | 2026-11-10 18:23 | Scout | Quant | findings/2026-11-10_1823_asia.md (hypothetical H6 +2.48%) |
+| 2026-11-11 00:30 | Owner | Desk | briefs/mnq_migration.md (MNQ paper request; awaiting broker + risk choice) |
