@@ -21,3 +21,12 @@ Both need: an account in the owner's name, keys stored as environment secrets, a
 A) Raise limits to fit 1 MNQ (e.g. I3 risk ~$650, daily limit > $650). H6 does not fit any sane limit at 1 MNQ.
 B) Keep the $350/day limit and add hard stops (MNQ trades ~23h, so overnight stops are possible, unlike QQQ). Stops change the strategy -> Quant must re-test first (needs NQ overnight data).
 C) Run I3 only on MNQ (closest fit), drop H6 from the futures account.
+
+## Update 2026-11-11 ~00:45 ET — owner has a NinjaTrader account with a demo (sim) account
+- Broker: NinjaTrader Trade API (Tradovate platform). Demo host demo.tradovateapi.com; market data md-demo.tradovateapi.com.
+  Hosts added to the environment allowlist (approved by owner); demo endpoint reachable (HTTP 400 on an empty auth request = alive).
+- Auth (docs.ninjatrader.com/api/authentication): POST /v1/auth/accesstokenrequest with name, password, appId, appVersion, cid, sec,
+  deviceId -> Bearer token (~90 min, renewable). cid/sec are "issued by NinjaTrader"; the docs do not say how an individual gets them
+  (expected: NinjaTrader web platform account settings -> API access, possibly a paid add-on / live account requirement; VERIFY).
+- Owner to add as ENVIRONMENT VARIABLES (never in chat): NT_USERNAME, NT_PASSWORD, NT_CID, NT_SEC.
+- Still open: risk choice (stops + re-test / I3 only / raise limits). No MNQ order before that choice and a Builder Review.
